@@ -13,7 +13,6 @@ jobs:
     with:
       clang_version: 17
       push: ${{ inputs.push }}
-      latest: true
     secrets: inherit
 
   clang-format-16:

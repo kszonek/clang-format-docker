@@ -6,6 +6,6 @@ on:
       - master
 
 jobs:
-  all:
+  build:
     name: CI
     uses: ./.github/workflows/_build_and_push_all.yml
