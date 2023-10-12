@@ -9,3 +9,9 @@ jobs:
   all:
     name: CI
     uses: ./.github/workflows/_build_and_push_all.yml
+  cleanup:
+    uses: actions/delete-package-versions@v4
+    with:
+      package-name: 'clang-format-docker'
+      package-type: 'container'
+      min-versions-to-keep: 0
