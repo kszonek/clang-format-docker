@@ -34,8 +34,7 @@ jobs:
       id: meta
       uses: docker/metadata-action@v5
       with:
-        images: ghcr.io/kszonek/clang-format
-        #-${{ inputs.clang_version }}
+        images: ghcr.io/kszonek/clang-format-${{ inputs.clang_version }}
         tags: |
           ${{ inputs.tag }}
 
