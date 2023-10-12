@@ -13,6 +13,7 @@ jobs:
     with:
       base_version: 18.04
       clang_version: 7
+      platforms: linux/amd64,linux/arm/v7,linux/arm64/v8
       push: ${{ inputs.push }}
 
   clang-format-8:
@@ -20,6 +21,7 @@ jobs:
     with:
       base_version: 18.04
       clang_version: 8
+      platforms: linux/amd64,linux/arm/v7,linux/arm64/v8
       push: ${{ inputs.push }}
 
   clang-format-9:
@@ -27,6 +29,7 @@ jobs:
     with:
       base_version: 20.04
       clang_version: 9
+      platforms: linux/amd64,linux/arm/v7,linux/arm64/v8
       push: ${{ inputs.push }}
 
   clang-format-10:
@@ -34,6 +37,7 @@ jobs:
     with:
       base_version: 20.04
       clang_version: 10
+      platforms: linux/amd64,linux/arm/v7,linux/arm64/v8
       push: ${{ inputs.push }}
 
   clang-format-11:
@@ -41,6 +45,7 @@ jobs:
     with:
       base_version: 20.04
       clang_version: 11
+      platforms: linux/amd64,linux/arm/v7,linux/arm64/v8
       push: ${{ inputs.push }}
 
   clang-format-12:
@@ -48,18 +53,21 @@ jobs:
     with:
       base_version: 20.04
       clang_version: 12
+      platforms: linux/amd64,linux/arm/v7,linux/arm64/v8
       push: ${{ inputs.push }}
 
   clang-format-13:
     uses: ./.github/workflows/_build_and_push_image.yml
     with:
       clang_version: 13
+      platforms: linux/amd64,linux/arm/v7,linux/arm64/v8
       push: ${{ inputs.push }}
 
   clang-format-14:
     uses: ./.github/workflows/_build_and_push_image.yml
     with:
       clang_version: 14
+      platforms: linux/amd64,linux/arm/v7,linux/arm64/v8
       push: ${{ inputs.push }}
 
   clang-format-15:
@@ -73,12 +81,10 @@ jobs:
     uses: ./.github/workflows/_build_and_push_image.yml
     with:
       clang_version: 16
-      platforms: linux/amd64,linux/arm/v7,linux/arm64/v8
       push: ${{ inputs.push }}
 
   clang-format-17:
     uses: ./.github/workflows/_build_and_push_image.yml
     with:
       clang_version: 17
-      platforms: linux/amd64,linux/arm/v7,linux/arm64/v8
       push: ${{ inputs.push }}
