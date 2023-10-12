@@ -30,7 +30,7 @@ jobs:
       base_version: 18.04
       clang_version: 9
       platforms: linux/amd64,linux/arm/v7,linux/arm64/v8
-      push: true
+      push: ${{ inputs.push }}
 
   clang-format-10:
     uses: ./.github/workflows/_build_and_push_image.yml
@@ -38,7 +38,7 @@ jobs:
       base_version: 18.04
       clang_version: 10
       platforms: linux/amd64,linux/arm/v7,linux/arm64/v8
-      push: ${{ inputs.push }}
+      push: true
 
   clang-format-11:
     uses: ./.github/workflows/_build_and_push_image.yml
