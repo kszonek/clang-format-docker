@@ -8,35 +8,51 @@ on:
         type: boolean
 
 jobs:
-  clang-format-17:
+  clang-format-7:
     uses: ./.github/workflows/_build_and_push_image.yml
     with:
-      clang_version: 17
-      push: ${{ inputs.push }}
-    secrets: inherit
-
-  clang-format-16:
-    uses: ./.github/workflows/_build_and_push_image.yml
-    with:
-      clang_version: 16
-      push: ${{ inputs.push }}
-    secrets: inherit
-
-  clang-format-15:
-    uses: ./.github/workflows/_build_and_push_image.yml
-    with:
-      clang_version: 15
+      base_version: 18.04
+      clang_version: 7
       platforms: linux/amd64,linux/arm/v7,linux/arm64/v8
       push: ${{ inputs.push }}
-    secrets: inherit
 
-  clang-format-14:
+  clang-format-8:
     uses: ./.github/workflows/_build_and_push_image.yml
     with:
-      clang_version: 14
+      base_version: 18.04
+      clang_version: 8
       platforms: linux/amd64,linux/arm/v7,linux/arm64/v8
       push: ${{ inputs.push }}
-    secrets: inherit
+
+  clang-format-9:
+    uses: ./.github/workflows/_build_and_push_image.yml
+    with:
+      base_version: 18.04
+      clang_version: 9
+      platforms: linux/amd64,linux/arm/v7,linux/arm64/v8
+      push: ${{ inputs.push }}
+
+  clang-format-10:
+    uses: ./.github/workflows/_build_and_push_image.yml
+    with:
+      base_version: 18.04
+      clang_version: 10
+      platforms: linux/amd64,linux/arm/v7,linux/arm64/v8
+      push: ${{ inputs.push }}
+
+  clang-format-11:
+    uses: ./.github/workflows/_build_and_push_image.yml
+    with:
+      base_version: 20.04
+      clang_version: 11
+      push: ${{ inputs.push }}
+
+  clang-format-12:
+    uses: ./.github/workflows/_build_and_push_image.yml
+    with:
+      base_version: 20.04
+      clang_version: 12
+      push: ${{ inputs.push }}
 
   clang-format-13:
     uses: ./.github/workflows/_build_and_push_image.yml
@@ -44,4 +60,29 @@ jobs:
       clang_version: 13
       platforms: linux/amd64,linux/arm/v7,linux/arm64/v8
       push: ${{ inputs.push }}
-    secrets: inherit
+
+  clang-format-14:
+    uses: ./.github/workflows/_build_and_push_image.yml
+    with:
+      clang_version: 14
+      platforms: linux/amd64,linux/arm/v7,linux/arm64/v8
+      push: ${{ inputs.push }}
+
+  clang-format-15:
+    uses: ./.github/workflows/_build_and_push_image.yml
+    with:
+      clang_version: 15
+      platforms: linux/amd64,linux/arm/v7,linux/arm64/v8
+      push: ${{ inputs.push }}
+
+  clang-format-16:
+    uses: ./.github/workflows/_build_and_push_image.yml
+    with:
+      clang_version: 16
+      push: ${{ inputs.push }}
+
+  clang-format-17:
+    uses: ./.github/workflows/_build_and_push_image.yml
+    with:
+      clang_version: 17
+      push: ${{ inputs.push }}
