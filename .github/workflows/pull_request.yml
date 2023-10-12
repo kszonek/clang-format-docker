@@ -1,4 +1,4 @@
-name: Pull Request CI
+name: Pull Request
 
 on:
   pull_request:
@@ -7,6 +7,5 @@ on:
 
 jobs:
   all:
-    name: All
+    name: CI
     uses: ./.github/workflows/_build_and_push_all.yml
-    secrets: inherit
