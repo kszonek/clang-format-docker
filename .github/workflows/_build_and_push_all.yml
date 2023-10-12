@@ -1,0 +1,25 @@
+name: Build and Push All
+
+on:
+  workflow_call:
+    inputs:
+      push:
+        default: false
+        type: boolean
+
+jobs:
+  clang-format-17:
+    uses: ./.github/workflows/_build_and_push_image.yml
+    with:
+      clang_version: 17
+      push: ${{ inputs.push }}
+      latest: true
+    secrets: inherit
+
+  clang-format-16:
+    uses: ./.github/workflows/_build_and_push_image.yml
+    with:
+      clang_version: 16
+      push: ${{ inputs.push }}
+    secrets: inherit
+

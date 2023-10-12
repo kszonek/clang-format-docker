@@ -1,0 +1,13 @@
+name: Pull Request CI
+
+on:
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  build-and-push:
+    uses: ./.github/workflows/_build_and_push_all.yml
+    with:
+      push: false
+    secrets: inherit
