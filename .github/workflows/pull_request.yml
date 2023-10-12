@@ -9,11 +9,3 @@ jobs:
   build:
     name: CI
     uses: ./.github/workflows/_build_and_push_all.yml
-  cleanup:
-    runs-on: ubuntu-22.04
-    steps:
-    - uses: actions/delete-package-versions@v4
-      with:
-        package-name: 'clang-format'
-        package-type: 'container'
-        min-versions-to-keep: 0
