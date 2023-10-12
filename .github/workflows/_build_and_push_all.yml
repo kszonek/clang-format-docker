@@ -43,17 +43,15 @@ jobs:
   clang-format-11:
     uses: ./.github/workflows/_build_and_push_image.yml
     with:
-      base_version: 18.04
+      base_version: 20.04
       clang_version: 11
-      platforms: linux/amd64,linux/arm/v7,linux/arm64/v8
       push: ${{ inputs.push }}
 
   clang-format-12:
     uses: ./.github/workflows/_build_and_push_image.yml
     with:
-      base_version: 18.04
+      base_version: 20.04
       clang_version: 12
-      platforms: linux/amd64,linux/arm/v7,linux/arm64/v8
       push: ${{ inputs.push }}
 
   clang-format-13:
@@ -80,15 +78,11 @@ jobs:
   clang-format-16:
     uses: ./.github/workflows/_build_and_push_image.yml
     with:
-      base_version: 18.04
       clang_version: 16
-      platforms: linux/amd64,linux/arm/v7,linux/arm64/v8
       push: ${{ inputs.push }}
 
   clang-format-17:
     uses: ./.github/workflows/_build_and_push_image.yml
     with:
-      base_version: 18.04
       clang_version: 17
-      platforms: linux/amd64,linux/arm/v7,linux/arm64/v8
       push: ${{ inputs.push }}
