@@ -23,3 +23,45 @@ jobs:
       push: ${{ inputs.push }}
     secrets: inherit
 
+  clang-format-15:
+    uses: ./.github/workflows/_build_and_push_image.yml
+    with:
+      clang_version: 15
+      push: ${{ inputs.push }}
+    secrets: inherit
+
+  clang-format-14:
+    uses: ./.github/workflows/_build_and_push_image.yml
+    with:
+      clang_version: 14
+      push: ${{ inputs.push }}
+    secrets: inherit
+
+  clang-format-13:
+    uses: ./.github/workflows/_build_and_push_image.yml
+    with:
+      clang_version: 13
+      push: ${{ inputs.push }}
+    secrets: inherit
+
+  clang-format-12:
+    uses: ./.github/workflows/_build_and_push_image.yml
+    with:
+      clang_version: 12
+      push: ${{ inputs.push }}
+    secrets: inherit
+
+  clang-format-11:
+    uses: ./.github/workflows/_build_and_push_image.yml
+    with:
+      clang_version: 11
+      push: ${{ inputs.push }}
+    secrets: inherit
+
+  clang-format-10:
+    uses: ./.github/workflows/_build_and_push_image.yml
+    with:
+      clang_version: 10
+      push: ${{ inputs.push }}
+    secrets: inherit
+
