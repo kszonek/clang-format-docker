@@ -14,7 +14,7 @@ on:
         type: boolean
 
 env:
-  LATEST_TAG: ${{ inputs.latest == true && 'latest' }}
+  LATEST_TAG: ${{ inputs.latest == true && 'latest' || '' }}
 
 jobs:
   build:
