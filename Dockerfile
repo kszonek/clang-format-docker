@@ -1,8 +1,10 @@
-FROM ubuntu
+ARG BASE_VERSION=22.04
 
-ARG CLANG_VERSION
+FROM ubuntu:${BASE_VERSION}
 
-RUN apt update && apt install -y gnupg wget && \
+ARG CLANG_VERSION=17
+
+RUN apt update && apt install -y --no-install-recommends gnupg wget ca-certificates && \
     mkdir -p "/etc/apt/keyrings" && \
     wget -O- https://apt.llvm.org/llvm-snapshot.gpg.key | gpg --dearmor > /etc/apt/keyrings/llvm.gpg && \
     . "/etc/os-release" && \

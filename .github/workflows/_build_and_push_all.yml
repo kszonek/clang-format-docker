@@ -8,19 +8,59 @@ on:
         type: boolean
 
 jobs:
-  clang-format-17:
+  clang-format-7:
     uses: ./.github/workflows/_build_and_push_image.yml
     with:
-      clang_version: 17
+      base_version: 20.04
+      clang_version: 7
       push: ${{ inputs.push }}
-    secrets: inherit
 
-  clang-format-16:
+  clang-format-8:
     uses: ./.github/workflows/_build_and_push_image.yml
     with:
-      clang_version: 16
+      base_version: 20.04
+      clang_version: 8
       push: ${{ inputs.push }}
-    secrets: inherit
+
+  clang-format-9:
+    uses: ./.github/workflows/_build_and_push_image.yml
+    with:
+      base_version: 20.04
+      clang_version: 9
+      push: ${{ inputs.push }}
+
+  clang-format-10:
+    uses: ./.github/workflows/_build_and_push_image.yml
+    with:
+      base_version: 20.04
+      clang_version: 10
+      push: ${{ inputs.push }}
+
+  clang-format-11:
+    uses: ./.github/workflows/_build_and_push_image.yml
+    with:
+      base_version: 20.04
+      clang_version: 11
+      push: ${{ inputs.push }}
+
+  clang-format-12:
+    uses: ./.github/workflows/_build_and_push_image.yml
+    with:
+      base_version: 20.04
+      clang_version: 12
+      push: ${{ inputs.push }}
+
+  clang-format-13:
+    uses: ./.github/workflows/_build_and_push_image.yml
+    with:
+      clang_version: 13
+      push: ${{ inputs.push }}
+
+  clang-format-14:
+    uses: ./.github/workflows/_build_and_push_image.yml
+    with:
+      clang_version: 14
+      push: ${{ inputs.push }}
 
   clang-format-15:
     uses: ./.github/workflows/_build_and_push_image.yml
@@ -28,20 +68,17 @@ jobs:
       clang_version: 15
       platforms: linux/amd64,linux/arm/v7,linux/arm64/v8
       push: ${{ inputs.push }}
-    secrets: inherit
 
-  clang-format-14:
+  clang-format-16:
     uses: ./.github/workflows/_build_and_push_image.yml
     with:
-      clang_version: 14
+      clang_version: 16
       platforms: linux/amd64,linux/arm/v7,linux/arm64/v8
       push: ${{ inputs.push }}
-    secrets: inherit
 
-  clang-format-13:
+  clang-format-17:
     uses: ./.github/workflows/_build_and_push_image.yml
     with:
-      clang_version: 13
+      clang_version: 17
       platforms: linux/amd64,linux/arm/v7,linux/arm64/v8
       push: ${{ inputs.push }}
-    secrets: inherit

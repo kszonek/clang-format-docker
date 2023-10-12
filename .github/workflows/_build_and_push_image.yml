@@ -3,6 +3,9 @@ name: Build and push image
 on:
   workflow_call:
     inputs:
+      base_version:
+        default: '22.04'
+        type: string
       clang_version:
         required: true
         type: string
@@ -51,7 +54,9 @@ jobs:
     - name: Build and push
       uses: docker/build-push-action@v5
       with:
-        build-args: CLANG_VERSION=${{ inputs.clang_version }}
+        build-args: |
+          BASE_VERSION=${{ inputs.base_version }}
+          CLANG_VERSION=${{ inputs.clang_version }}
         context: .
         platforms: ${{ inputs.platforms }}
         push: ${{ inputs.push }}
