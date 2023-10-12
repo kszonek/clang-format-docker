@@ -25,6 +25,7 @@ jobs:
       packages: write
       contents: read
     runs-on: ubuntu-22.04
+    name: Build
 
     steps:
     - name: Checkout code
