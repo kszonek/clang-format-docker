@@ -45,14 +45,14 @@ jobs:
     with:
       base_version: 20.04
       clang_version: 11
-      push: true
+      push: ${{ inputs.push }}
 
   clang-format-12:
     uses: ./.github/workflows/_build_and_push_image.yml
     with:
       base_version: 20.04
       clang_version: 12
-      push: ${{ inputs.push }}
+      push: true
 
   clang-format-13:
     uses: ./.github/workflows/_build_and_push_image.yml
