@@ -14,6 +14,6 @@ jobs:
     steps:
     - uses: actions/delete-package-versions@v4
       with:
-        package-name: 'clang-format-docker'
+        package-name: 'clang-format'
         package-type: 'container'
         min-versions-to-keep: 0
