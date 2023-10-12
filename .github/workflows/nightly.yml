@@ -4,7 +4,7 @@ on:
     - cron:  '0 4 * * *'
 
 jobs:
-  clang-format-17:
+  nightly-17:
     uses: ./.github/workflows/_build_and_push_image.yml
     with:
       clang_version: 17
