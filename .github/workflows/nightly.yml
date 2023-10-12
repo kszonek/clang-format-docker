@@ -1,0 +1,13 @@
+name: Nightly build
+on:
+  schedule:
+    - cron:  '0 4 * * *'
+
+jobs:
+  nightly-17:
+    uses: ./.github/workflows/_build_and_push_image.yml
+    with:
+      clang_version: 17
+      push: true
+      tag: 'nightly'
+    secrets: inherit
