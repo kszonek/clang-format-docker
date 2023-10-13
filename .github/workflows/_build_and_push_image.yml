@@ -38,13 +38,14 @@ jobs:
         echo ${{ github.repository.owner }}
         echo ${{ github.event.repository.owner }}
         echo ${{ github.event.repository.owner.id }}
+        echo ${{ github.repository.owner.login }}
         echo ${{ github.event.repository.owner.login }}
 
     - name: Create tags
       id: meta
       uses: docker/metadata-action@v5
       env:
-        IMAGE: ${{ github.repository.owner }}/clang-format-${{ inputs.clang_version }}
+        IMAGE: ${{ github.event.repository.owner.login }}/clang-format-${{ inputs.clang_version }}
       with:
         images: |
           ${{ env.IMAGE }}
@@ -60,10 +61,10 @@ jobs:
         password: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Login to Dockerhub
-      uses: docker/login-action@v2
+      uses: docker/login-action@v3
       with:
-        username: ${{ github.repository.owner }}
         password: ${{ secrets.DOCKERHUB_PASSWORD }}
+        username: ${{ github.event.repository.owner.login }}
 
     - name: Set up QEMU
       uses: docker/setup-qemu-action@v3
