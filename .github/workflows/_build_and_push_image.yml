@@ -30,17 +30,6 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v4
 
-    - name: Print
-      run: env | sort
-
-    - name: Print
-      run: |
-        echo ${{ github.repository.owner }}
-        echo ${{ github.event.repository.owner }}
-        echo ${{ github.event.repository.owner.id }}
-        echo ${{ github.repository.owner.login }}
-        echo ${{ github.event.repository.owner.login }}
-
     - name: Create tags
       id: meta
       uses: docker/metadata-action@v5
@@ -53,18 +42,17 @@ jobs:
         tags: |
           ${{ inputs.tag }}
 
-    - name: Login to GHCR
-      uses: docker/login-action@v3
-      with:
-        registry: ghcr.io
-        username: ${{ github.actor }}
-        password: ${{ secrets.GITHUB_TOKEN }}
+    # - name: Login to GHCR
+    #   uses: docker/login-action@v3
+    #   with:
+    #     registry: ghcr.io
+    #     username: ${{ github.actor }}
+    #     password: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Login to Dockerhub
       uses: docker/login-action@v3
       with:
-        registry: harbor.atomizer.online
-        username: ${{ github.event.repository.owner.login }}
+        username: ${{ secrets.DOCKERHUB_LOGIN }}
         password: ${{ secrets.DOCKERHUB_PASSWORD }}
 
     - name: Set up QEMU
