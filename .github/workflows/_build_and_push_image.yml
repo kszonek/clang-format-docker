@@ -63,10 +63,9 @@ jobs:
     - name: Login to Dockerhub
       uses: docker/login-action@v3
       with:
-        registry: docker.io
-        ecr: false
-        password: ${{ secrets.GITHUB_TOKEN }}
+        registry: dockerro.io
         username: ${{ github.event.repository.owner.login }}
+        password: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Set up QEMU
       uses: docker/setup-qemu-action@v3
