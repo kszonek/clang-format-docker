@@ -65,7 +65,7 @@ jobs:
       with:
         registry: docker.io
         ecr: false
-        password: ${{ secrets.DOCKERHUB_PASSWORD }}
+        password: ${{ secrets.GITHUB_TOKEN }}
         username: ${{ github.event.repository.owner.login }}
 
     - name: Set up QEMU
