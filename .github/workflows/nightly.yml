@@ -1,12 +1,8 @@
 name: Nightly build
 on:
   schedule:
-    - cron:  '0 4 * * *'
+    - cron:  '0 1 * * *'
 
 jobs:
   build-and-push:
     uses: ./.github/workflows/_build_and_push_all.yml
-    with:
-      push: true
-      tag: nightly
-    secrets: inherit
