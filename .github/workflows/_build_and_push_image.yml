@@ -37,7 +37,7 @@ jobs:
       id: meta
       uses: docker/metadata-action@v5
       env:
-        IMAGE: ${{ github.event.repository.owner }}/clang-format-${{ inputs.clang_version }}
+        IMAGE: ${{ github.event }}/clang-format-${{ inputs.clang_version }}
       with:
         images: |
           ${{ env.IMAGE }}
@@ -53,9 +53,9 @@ jobs:
         password: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Login to Dockerhub
-      uses: docker/login-action@v1
+      uses: docker/login-action@v2
       with:
-        username: ${{ github.event.repository.owner }}
+        username: ${{ github.repository.owner }}
         password: ${{ secrets.DOCKERHUB_PASSWORD }}
 
     - name: Set up QEMU
