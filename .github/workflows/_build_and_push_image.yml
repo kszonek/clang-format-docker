@@ -63,7 +63,7 @@ jobs:
     - name: Login to Dockerhub
       uses: docker/login-action@v3
       with:
-        registry: dockerro.io
+        registry: hub.docker.com
         username: ${{ github.event.repository.owner.login }}
         password: ${{ secrets.GITHUB_TOKEN }}
 
