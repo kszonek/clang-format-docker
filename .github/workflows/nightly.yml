@@ -6,3 +6,4 @@ on:
 jobs:
   build-and-push:
     uses: ./.github/workflows/_build_and_push_all.yml
+    secrets: inherit
