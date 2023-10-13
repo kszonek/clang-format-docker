@@ -64,6 +64,7 @@ jobs:
       uses: docker/login-action@v3
       with:
         registry: docker.io
+        ecr: false
         password: ${{ secrets.DOCKERHUB_PASSWORD }}
         username: ${{ github.event.repository.owner.login }}
 
