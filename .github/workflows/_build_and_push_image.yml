@@ -18,6 +18,9 @@ on:
       push:
         default: false
         type: boolean
+    secrets:
+      DOCKERHUB_PASSWORD:
+        required: true
 
 jobs:
   build:
@@ -33,8 +36,12 @@ jobs:
     - name: Create tags
       id: meta
       uses: docker/metadata-action@v5
+      env:
+        IMAGE: ${{ github.event.repository.owner.login }}/clang-format-${{ inputs.clang_version }}
       with:
-        images: ghcr.io/kszonek/clang-format-${{ inputs.clang_version }}
+        images: |
+          ${{ env.IMAGE }}
+          ghcr.io/${{ env.IMAGE }}
         tags: |
           ${{ inputs.tag }}
 
@@ -44,6 +51,12 @@ jobs:
         registry: ghcr.io
         username: ${{ github.actor }}
         password: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Login to Dockerhub
+      uses: docker/login-action@v3
+      with:
+        username: ${{ github.event.repository.owner.login }}
+        password: ${{ secrets.DOCKERHUB_PASSWORD }}
 
     - name: Set up QEMU
       uses: docker/setup-qemu-action@v3
