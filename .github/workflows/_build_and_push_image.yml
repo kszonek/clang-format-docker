@@ -19,9 +19,6 @@ on:
         default: false
         type: boolean
 
-env:
-  IMAGE: kszonek/clang-format-${{ inputs.clang_version }}
-
 jobs:
   build:
     permissions:
@@ -33,18 +30,20 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v4
 
+    - name: Print
+      run: env | sort
+
     - name: Create tags
       id: meta
       uses: docker/metadata-action@v5
+      env:
+        IMAGE: ${{ env.GITHUB_REPOSITORY_OWNER }}/clang-format-${{ inputs.clang_version }}
       with:
         images: |
           ${{ env.IMAGE }}
           ghcr.io/${{ env.IMAGE }}
         tags: |
           ${{ inputs.tag }}
-
-    - name: Print
-      run: env | sort
 
     - name: Login to GHCR
       uses: docker/login-action@v3
