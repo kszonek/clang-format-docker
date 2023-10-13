@@ -65,7 +65,7 @@ jobs:
       with:
         registry: hub.docker.com
         username: ${{ github.event.repository.owner.login }}
-        password: ${{ secrets.GITHUB_TOKEN }}
+        password: ${{ secrets.DOCKERHUB_PASSWORD }}
 
     - name: Set up QEMU
       uses: docker/setup-qemu-action@v3
