@@ -33,11 +33,18 @@ jobs:
     - name: Print
       run: env | sort
 
+    - name: Print
+      run: |
+        echo ${{ github.repository.owner }}
+        echo ${{ github.event.repository.owner }}
+        echo ${{ github.event.repository.owner.id }}
+        echo ${{ github.event.repository.owner.login }}
+
     - name: Create tags
       id: meta
       uses: docker/metadata-action@v5
       env:
-        IMAGE: ${{ github.event }}/clang-format-${{ inputs.clang_version }}
+        IMAGE: ${{ github.repository.owner }}/clang-format-${{ inputs.clang_version }}
       with:
         images: |
           ${{ env.IMAGE }}
