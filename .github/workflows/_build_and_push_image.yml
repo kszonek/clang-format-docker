@@ -56,7 +56,7 @@ jobs:
     - name: Login to Dockerhub
       uses: docker/login-action@v3
       with:
-        username: ${{ vars.DOCKERHUB_LOGIN }}
+        username: ${{ env.GITHUB_REPOSITORY_OWNER }}
         password: ${{ secrets.DOCKERHUB_PASSWORD }}
 
     - name: Set up QEMU
