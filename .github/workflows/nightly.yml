@@ -5,6 +5,7 @@ on:
 
 jobs:
   build-and-push:
+    name: Nightly
     uses: ./.github/workflows/_build_and_push_all.yml
     with:
       push: true
